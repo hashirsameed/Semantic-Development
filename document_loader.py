@@ -75,3 +75,18 @@ class EmbeddingsManager:
 """ initialized the embeddings manager"""
 embeddings_manager = EmbeddingsManager()
 print(embeddings_manager)
+
+#vector store
+class VectorStore:
+    def __init__(self,collection_name:str="pdf_document" , persist_directory:str=r"C:/Users/hashi/Downloads/Semantic-Development-main/Semantic-Development-main/semantic search/rag/information.txt"):
+        """
+        initialized the vector store
+        args:
+            collection name: name of the chromadb collection
+            persist_directory: directory to persist vector store
+        """
+        self.collection_name = collection_name
+        self.persist_directory = persist_directory
+        self.client = None
+        self.collection = None
+        self._initialized_store()
